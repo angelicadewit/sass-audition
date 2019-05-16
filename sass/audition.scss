@@ -25,6 +25,7 @@ $desktop-breakpoint: 1024px;
     @include desktop{
         display: flex;
         align-items: center;
+        justify-content: space-evenly;
         width: 100%;
     }
 
@@ -41,7 +42,7 @@ $desktop-breakpoint: 1024px;
         }
 
         .alert{
-            padding: 0px 10px;
+            padding: 0px 15px;
             margin-right: 10px;
             font-weight: 800;
             color: white;
