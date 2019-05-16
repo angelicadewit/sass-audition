@@ -1,0 +1,113 @@
+// Bootstrap
+@import "vendor/bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css?family=Muli:400,600,800');
+
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1024px;
+
+@mixin tablet {
+	@media only screen and (min-width: $tablet-breakpoint){
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media only screen and (min-width: $desktop-breakpoint){
+		@content;
+	}
+}
+
+.content{
+    font-family: 'Muli', sans-serif;
+    text-align: center;
+    transition: 0.2s;
+    
+    @include desktop{
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    p{
+        margin-bottom: 20px;
+
+        .bold{
+            font-weight: 800;
+            margin-right: 10px;
+        }
+
+        a{
+            text-decoration: underline;
+        }
+
+        .alert{
+            padding: 0px 10px;
+            margin-right: 10px;
+            font-weight: 800;
+            color: white;
+            background: #ff9d64;
+            font-size: 2rem;
+        }
+    }
+
+    .hide-desktop{
+
+        @include desktop{
+            display: none;
+        }
+    }
+
+    .show-desktop{
+        display: none;
+        
+        @include desktop{
+            display: block;
+        }
+    }
+
+
+
+    .buttons{
+        
+        @include tablet{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        @include desktop{
+            width: 45%;
+        }
+    
+        .button{
+            display: block;
+            border: 2px solid #5a9cff;
+            width: 100%;
+            border-radius: .35rem;
+            margin-bottom: 20px;
+            
+            &:hover{
+                background-color: #5a9cff;
+                transition: 0.2s;
+            }
+            
+            @include tablet{
+                display: inline-block;
+                width: 30%;
+            }
+        }
+        
+        a{
+            padding: 15px 0px;
+            text-decoration: none;
+            color: #5a9cff;
+            text-align: center;
+            font-weight: 800;
+
+            &:hover{
+                color: white;
+                transition: 0.2s;
+            }
+        }
+    }
+}
+
